@@ -1,4 +1,4 @@
-# brew-script
+# Homebrew/Python Package Manager
 
 This Python script simplifies the management of Homebrew packages on macOS. It provides an easy-to-use interface to install, uninstall, and create bundles of Homebrew formulas and casks. Whether you're a developer or a power user, this tool can streamline the process of managing your software packages.
 
