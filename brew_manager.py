@@ -4,8 +4,6 @@
 
 import subprocess
 import requests
-import subprocess
-import requests
 from pyfzf import FzfPrompt
 
 # Check and install necessary Python packages
