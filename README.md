@@ -8,8 +8,7 @@ This Python script simplifies the management of Homebrew packages on macOS. It p
 
 Before using the script, make sure you have the following prerequisites:
 - **Python 3 (3.6 and so)**:
-- **PyFzf** & **Requests**
-- These Python packages are required for the script to work. You can install them with `pip3` if needed.
+- **PyFzf & Requests** - These Python packages are required for the script to work. You can install them with `pip3` if needed.
 - **Fzf**
 
 Here's how to use the script:
