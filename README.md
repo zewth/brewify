@@ -33,7 +33,7 @@ Enjoy hassle-free Homebrew package management with this script!
 
 ## Author
 
-- Gerald Carreño
+- Antoine Carreño
 
 ## License
 
