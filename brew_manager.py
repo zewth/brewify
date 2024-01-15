@@ -1,6 +1,5 @@
-# Author: Gerald Carreño
+# Author: Antoine Carreño
 # Last Updated: October 27, 2023
-# Purpose: This script helps you manage Homebrew packages on macOS. You can install, uninstall, and create bundles of Homebrew formulas and casks.
 
 import subprocess
 import requests
