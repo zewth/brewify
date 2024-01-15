@@ -1,5 +1,4 @@
-# Homebrew script
-
+# Brewify
 This Python script simplifies the management of Homebrew packages on macOS. It provides an easy-to-use interface to install, uninstall, and create bundles of Homebrew formulas and casks. Whether you're a developer or a power user, this tool can streamline the process of managing your software packages.
 
 **Note: This script is designed for macOS users who use Homebrew, a package manager specific to macOS. If you're using other package managers or operating systems, the functionality may differ.**
