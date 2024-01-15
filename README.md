@@ -26,7 +26,7 @@ Feel free to explore the script's capabilities and simplify your Homebrew packag
 
 1. Clone this repository to your local machine.
 2. Make sure you have the prerequisites mentioned above installed.
-3. Run the script in your terminal by executing `python brew_manager.py`.
+3. Run the script in your terminal by executing `python brewify.py`.
 
 Enjoy hassle-free Homebrew package management with this script!
 
