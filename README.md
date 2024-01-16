@@ -6,9 +6,9 @@ This Python script simplifies the management of Homebrew packages on macOS. It p
 ## Usage
 
 Before using the script, make sure you have the following prerequisites:
-- **Python 3 (3.6 and so)**:
-- **PyFzf & Requests** - These Python packages are required for the script to work. You can install them with `pip3` if needed.
-- **Fzf**
+- ``python3``` (3.6 and so):
+- ```pyfzf``` & ```requests``` - These Python packages are required for the script to work. You can install them with `pip3` if needed.
+- ```fzf```
 
 Here's how to use the script:
 
@@ -30,10 +30,11 @@ Feel free to explore the script's capabilities and simplify your Homebrew packag
 
 Enjoy hassle-free Homebrew package management with this script!
 
-## Author
+## Demo
+![][brewify_demo.gif]
 
+## Author
 - Antoine Carreño
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](MIT-LICENSE.txt) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
