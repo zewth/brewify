@@ -31,7 +31,7 @@ Feel free to explore the script's capabilities and simplify your Homebrew packag
 Enjoy hassle-free Homebrew package management with this script!
 
 ## Demo
-![brewify demo][https://github.com/antoinebit/brewify/blob/main/images/brewify_demo.gif]
+![brewify demo](images/brewify_demo.gif)
 
 ## Author
 - Antoine Carreño
