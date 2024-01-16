@@ -5,6 +5,8 @@ import subprocess
 import requests
 from pyfzf import FzfPrompt
 
+global install_command
+
 # Check and install necessary Python packages
 def check_and_install_packages():
     try:
@@ -116,20 +118,23 @@ def uninstall_package():
 
     package_to_uninstall = search_and_select_item(installed_packages)
     if package_to_uninstall:
-        uninstall_command = f'brew uninstall {package_to_uninstall}'
+        uninstall_command = f'brew uninstall --zap {package_to_uninstall}'
         subprocess.check_call(uninstall_command, shell=True)
         print(f"{package_to_uninstall} has been successfully uninstalled.")
 
 # Install a bundle of Homebrew packages
 def install_bundle():
     package_list = []
+    package_type = None 
 
     while True:
-        package_type = input("Do you want to add a formula (F) or a cask (C) to the bundle? (F/C): ").lower()
+        package_type = input("Do you want to add a (F)ormula or a (C)ask to the bundle (A)bort: ").lower()
         if package_type == "f":
             available_packages = search_formulas()
         elif package_type == "c":
             available_packages = search_casks()
+        elif package_type == "a":
+            break
         else:
             print("Invalid operation. Try again.")
             continue
@@ -139,24 +144,33 @@ def install_bundle():
             package_list.append(package)
             print(f"{package} has been added to the bundle.")
 
-        continue_adding = input("Do you want to add more packages to the bundle? Yes (Y)  No (N): ").lower()
+        continue_adding = input("Do you want to add more packages to the bundle? (Y)es (N)o: ").lower()
         if continue_adding != "y":
             break
 
     if package_list:
         print("Installing bundle packages...")
+        installed_packages = subprocess.check_output(["brew", "list"]).decode("utf-8").splitlines()
+
+
         for package in package_list:
-            if package_type == "f":
-                install_command = f'brew install {package}'
+            if package in installed_packages:
+                print(f"{package} is already installed, skipping.")
+                continue
+            elif package_type == "f":
+                install_command = f'brew install --formula {package}' 
             elif package_type == "c":
                 install_command = f'brew install --cask {package}'
+            else:
+                print("Skipping installation.")
+                continue
             subprocess.check_call(install_command, shell=True)
             print(f"{package} has been successfully installed.")
 
 # Main program logic
 def main():
     while True:
-        operation = input("What operation do you want to perform? Install (I)  Uninstall (U)  Exit (E): ").lower()
+        operation = input("What operation do you want to perform? (I)nstall (U)ninstall (E)xit: ").lower()
         if operation == "e":
             break
         if operation not in ["i", "u"]:
@@ -164,15 +178,15 @@ def main():
             continue
         
         if operation == "i":
-            operation_type = input("Do you want to install a formula (F), a cask (C), a bundle (B): ").lower()
+            operation_type = input("Do you want to install a (F)ormula (C)ask (B)undle (A)bort: ").lower()
             if operation_type == "f":
                 install_application()
             elif operation_type == "c":
                 install_cask()
-            elif operation_type == "u":
-                uninstall_package()
             elif operation_type == "b":
                 install_bundle()
+            elif operation_type == "a":
+                break
             else:
                 print("Invalid operation. Try again.")
         elif operation == "u":
