@@ -34,7 +34,7 @@ Enjoy hassle-free Homebrew package management with this script!
 ![brewify demo](images/brewify_demo.gif)
 
 ## Author
-- Antoine Carreño
+- antoinepcap
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
